@@ -1,9 +1,5 @@
-core_extended
 yojson
 ctypes-foreign
-async
-cohttp-async
-core_bench
 textwrap
 uri
 cryptokit
