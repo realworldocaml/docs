@@ -6,7 +6,6 @@ steps:
     arch: "amd64"
   command:
     - "git -C /home/opam/opam-repository pull origin master && opam update -uy"
-    - "opam pin add -n odoc --dev"
     - "opam --yes depext -uyi -j 20 odoc odig `grep -v '^#' PACKAGES`"
     - "opam config exec -- odig odoc"
     - "tar -C `opam config var prefix`/var/cache/odig -jcf /home/opam/docs.tbz odoc/"
