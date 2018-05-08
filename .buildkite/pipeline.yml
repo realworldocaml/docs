@@ -8,7 +8,7 @@ steps:
     - "git -C /home/opam/opam-repository pull origin master && opam update -uy"
     - "opam pin add -n odoc --dev"
     - "opam --yes depext -uyi -j 20 odoc odig `grep -v '^#' PACKAGES`"
-    - "opam config exec -- odig odoc"
+    - "opam config exec -- odig odoc -q"
     - "tar -C `opam config var prefix`/var/cache/odig -jcf /home/opam/docs.tbz odoc/"
     - "cd /home/opam && buildkite-agent artifact upload docs.tbz"
   plugins:
